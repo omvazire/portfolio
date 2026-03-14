@@ -1,0 +1,290 @@
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  overflow: visible; 
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+}
+
+.hero-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.floating-shape {
+  position: absolute;
+  border-radius: 20px;
+  z-index: 0;
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--card-border);
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  z-index: 1;
+  width: 100%;
+}
+
+.hero-text-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 600px;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.typewriter-container {
+  display: flex;
+  align-items: center;
+  font-family: 'Fira Code', monospace, sans-serif;
+  font-size: 1.5rem;
+  color: #10b981; 
+  background: transparent;
+  padding: 0.5rem 0;
+  width: fit-content;
+  min-height: 48px;
+}
+
+.typewriter-prefix {
+  margin-right: 0.8rem;
+  font-weight: 800;
+  color: #f97316;
+}
+
+.word-slider {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.typewriter-text {
+  font-weight: 500;
+}
+
+.typewriter-cursor {
+  font-weight: 800;
+  margin-left: 2px;
+  color: #10b981;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.primary-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 2rem;
+  background: var(--accent-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(168, 85, 247, 0.4);
+}
+
+.primary-btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.6);
+}
+
+.secondary-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 2rem;
+  background: transparent;
+  color: var(--accent-color);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 1px solid var(--accent-color);
+  cursor: pointer;
+}
+
+.secondary-btn:hover {
+  background: rgba(168, 85, 247, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Image content */
+.hero-image-content {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.profile-img-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 480px; 
+  aspect-ratio: 1;
+  padding: 8px;
+  background: linear-gradient(135deg, var(--accent-color), #22d3ee, #e879f9);
+  box-shadow: 0 10px 40px rgba(168, 85, 247, 0.4);
+  animation: morphingBlob 8s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes morphingBlob {
+  0% {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    transform: translateY(0);
+  }
+  34% {
+    border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+    transform: translateY(-10px);
+  }
+  67% {
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+    transform: translateY(0px);
+  }
+  100% {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    transform: translateY(0);
+  }
+}
+
+.profile-img-wrapper:hover {
+  transform: scale(1.02);
+  animation-play-state: paused;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-color);
+  animation: morphingBlob 8s ease-in-out infinite;
+  overflow: hidden;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.profile-img-wrapper:hover .profile-img {
+  animation-play-state: paused;
+}
+
+.profile-img-wrapper:hover .avatar-img {
+  transform: scale(1.05);
+}
+
+
+
+@media (max-width: 992px) {
+  .hero-content {
+    flex-direction: column-reverse; /* Usually looks better with text on top/bottom based on design. Using column so image is below text */
+    text-align: center;
+    gap: 4rem;
+  }
+  .hero-text-content {
+    align-items: center;
+  }
+  .typewriter-container {
+    margin: 0 auto;
+  }
+  .hero-image-content {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-section {
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+  }
+  .profile-img-wrapper {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-section {
+    padding-top: 5rem;
+    min-height: auto;
+  }
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  .hero-text-content {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .typewriter-container {
+    font-size: 0.95rem;
+    flex-wrap: wrap;
+    max-width: 100%;
+    justify-content: center;
+    height: auto;
+    text-align: center;
+  }
+  .word-slider {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero-actions {
+    flex-direction: row;
+    width: 100%;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .primary-btn, .secondary-btn {
+    width: auto;
+    flex: 1;
+    min-width: 140px;
+    font-size: 0.85rem;
+    padding: 0.75rem 0.5rem;
+  }
+  .profile-img-wrapper {
+    max-width: 240px;
+  }
+  .hero-content {
+    gap: 2rem;
+  }
+}

@@ -1,0 +1,92 @@
+.glassy-navbar {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%) !important; /* using framer motion to animate y, but need to maintain x center */
+  width: 90%;
+  max-width: 800px;
+  height: 64px;
+  border-radius: 32px;
+  background: rgba(30, 30, 40, 0.45);
+  backdrop-filter: blur(24px) saturate(160%) contrast(110%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%) contrast(110%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 100;
+}
+
+.nav-logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: var(--text-primary);
+}
+
+.nav-logo span {
+  color: var(--accent-color);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-contact-btn {
+  background: var(--accent-color);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.nav-contact-btn:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.4);
+}
+
+@media (max-width: 640px) {
+  .nav-links {
+    display: none; /* Hide on very small screens for now */
+  }
+}
+
+@media (max-width: 480px) {
+  .glassy-navbar {
+    display: none !important;
+  }
+}

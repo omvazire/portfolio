@@ -1,0 +1,182 @@
+.stats-section {
+  width: 100%;
+}
+
+.stats-layout {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  align-items: stretch;
+}
+
+.hero-stats {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2.5rem;
+  z-index: 1;
+}
+
+.github-heatmap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+  z-index: 1;
+  min-width: 300px;
+}
+
+.github-heatmap h3 {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.heatmap-container {
+  width: 100%;
+  /* Use rtl trick to force scrollbar to start at the rightmost edge */
+  direction: rtl;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 1rem; /* Space for scrollbar */
+}
+
+/* Reset direction for the actual calendar to render correctly left-to-right */
+.heatmap-container > * {
+  direction: ltr;
+  margin-left: auto; /* Push it to the right if there's extra space */
+}
+
+/* Custom scrollbar for the heatmap container */
+.heatmap-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.heatmap-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.heatmap-container::-webkit-scrollbar-thumb {
+  background: rgba(167, 139, 250, 0.3);
+  border-radius: 4px;
+}
+
+.heatmap-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(167, 139, 250, 0.5);
+}
+
+/* Base styles for react-github-calendar */
+.react-activity-calendar {
+  min-width: max-content; /* Ensure it stays its full width so we can scroll it */
+}
+
+.stat-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-icon-wrapper {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  background: rgba(167, 139, 250, 0.1);
+  padding: 1.2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(167, 139, 250, 0.2);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover .stat-icon-wrapper {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 25px rgba(167, 139, 250, 0.4);
+  background: rgba(167, 139, 250, 0.15);
+}
+
+.stat-icon-wrapper svg {
+  color: var(--accent-color);
+}
+
+.stat-item h3 {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.stat-item p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 60px;
+  background-color: var(--card-border);
+}
+
+@media (max-width: 1200px) {
+  .stats-layout {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-stats {
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .stat-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-stats {
+    padding: 1.5rem;
+    gap: 1.5rem 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .github-heatmap {
+    padding: 1.5rem;
+    min-width: 0;
+  }
+  .heatmap-container {
+    width: 100%;
+  }
+  .stat-divider {
+    display: none;
+  }
+  .stat-item:nth-child(7) {
+    grid-column: 1 / -1;
+    margin-top: 0.5rem;
+  }
+  .stat-icon-wrapper {
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .stat-icon-wrapper svg {
+    width: 22px;
+    height: 22px;
+  }
+  .stat-item h3 {
+    font-size: 1.5rem;
+  }
+  .stat-item p {
+    font-size: 0.75rem;
+  }
+}
