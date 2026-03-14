@@ -72,3 +72,12 @@
 .dark .global-glow {
   background: radial-gradient(circle, rgba(96,165,250,0.12) 0%, rgba(96,165,250,0) 60%);
 }
+
+@media (max-width: 768px) {
+  .cursor-dot,
+  .cursor-glass,
+  .global-glow {
+    display: none !important;
+  }
+}
+
