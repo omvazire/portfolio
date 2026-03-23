@@ -1,6 +1,6 @@
-<h1 align="center">🌐 Personal Portfolio — Om Vazire</h1>
+<h1>🌐 Personal Portfolio — Om Vazire</h1>
 
-<p align="center">
+<p>
   <a href="https://portfolio-six-swart-85.vercel.app/" target="_blank">
     🚀 Live Demo
   </a>
