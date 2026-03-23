@@ -37,7 +37,7 @@ function App() {
             fontSize: '0.85rem',
             marginTop: '-1rem'
           }}>
-            <p>© {new Date().getFullYear()} Om Vazire. Built with React.js & Framer Motion</p>
+            <p>© {new Date().getFullYear()} Om Vazire. Built with React.js</p>
             <p style={{ marginTop: '0.5rem', fontStyle: 'italic', opacity: 0.8 }}>
               "Designed in mind, built with technology."
             </p>
