@@ -71,7 +71,7 @@ const certificatesData = [
   {
     title: 'Deloitte Job Simulation',
     issuer: 'Forage',
-    date: '2024',
+    date: '2025',
     icon: <FileText size={18} />,
     description: 'Virtual job simulation highlighting technical skills and problem solving for Deloitte.',
     pdfLink: '/certificates/udmxiyHeqYQLkTPvf_9PBTqmSxAf6zZTseP_8CkEf4u7iR9cbYcKs_1751046845657_completion_certificate.pdf'
@@ -95,7 +95,7 @@ const Certificates = () => {
 
   return (
     <section className="certificates-section" id="certificates">
-      <motion.h2 
+      <motion.h2
         className="section-title"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -104,13 +104,13 @@ const Certificates = () => {
         My <span className="gradient-text">Certificates</span>
       </motion.h2>
 
-      <div 
+      <div
         className="certificates-grid bento-glow-group"
         ref={gridRef}
         onMouseMove={handleMouseMove}
       >
         {certificatesData.map((cert, index) => (
-          <motion.div 
+          <motion.div
             key={index}
             className="certificate-card glass-panel mouse-glow-card"
             initial={{ opacity: 0, y: 50 }}
@@ -121,7 +121,7 @@ const Certificates = () => {
           >
             <div className="certificate-content">
               <h3 className="certificate-title" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <span style={{ display: 'flex', alignItems: 'center', color: 'var(--accent-color)' }}>{cert.icon}</span> 
+                <span style={{ display: 'flex', alignItems: 'center', color: 'var(--accent-color)' }}>{cert.icon}</span>
                 {cert.title}
               </h3>
               <div className="certificate-meta">
@@ -130,7 +130,7 @@ const Certificates = () => {
               </div>
               <p className="certificate-desc">{cert.description}</p>
             </div>
-            
+
             <div className="certificate-actions">
               <a href={cert.pdfLink} target="_blank" rel="noopener noreferrer" className="certificate-btn view-btn">
                 View Certificate <ExternalLink size={16} />
