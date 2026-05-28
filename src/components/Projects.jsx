@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Home, CloudSun, Music, FileText, Hand } from 'lucide-react';
+import { ExternalLink, Github, Home, CloudSun, Music, FileText, Languages } from 'lucide-react';
 import './Projects.css';
 
 const projectsData = [
@@ -17,13 +17,13 @@ const projectsData = [
     icon: <FileText size={22} />,
     description: 'An AI-powered SaaS platform that generates documentation from GitHub repositories or pasted code. Features secure JWT authentication, project dashboards, editable generated docs, GitHub repo fetching, and README generation with a modern responsive dark UI.',
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Render'],
-    demo: 'https://docgen-frontend-tvbl.onrender.com/dashboard',
+    demo: 'https://docgen-frontend-tvbl.onrender.com/',
     github: 'https://github.com/omvazire/DocGen'
   },
   {
     title: 'Bidirectional Sign Communication System',
-    icon: <Hand size={22} />,
-    description: 'An AI-powered communication platform that bridges sign-language users and non-sign users using real-time gesture recognition and 3D sign animation. Built with MediaPipe, PyTorch, React, Flask, and Three.js featuring sign-to-text translation, speech output, and text-to-sign visualization.',
+    icon: <Languages size={22} />,
+    description: 'A 3rd-year academic project — an AI-powered communication platform bridging sign-language and non-sign users via real-time gesture recognition and 3D sign animation. I contributed the text-to-sign visualization module and handled full deployment. Built with MediaPipe, PyTorch, React, Flask, and Three.js.',
     tech: ['React', 'Flask', 'PyTorch', 'MediaPipe', 'Three.js', 'Docker'],
     demo: 'https://bidirectional-sign-communication-system.onrender.com/',
     github: 'https://github.com/omvazire/bidirectional-sign-communication-system'
