@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Home, CloudSun, Music, FileText, Languages } from 'lucide-react';
+import { ExternalLink, Github, Home, CloudSun, Music, FileText, Languages, GraduationCap } from 'lucide-react';
 import './Projects.css';
 
 const projectsData = [
@@ -15,7 +15,7 @@ const projectsData = [
   {
     title: 'DocGen',
     icon: <FileText size={22} />,
-    description: 'An AI-powered SaaS platform that generates documentation from GitHub repositories or pasted code. Features secure JWT authentication, project dashboards, editable generated docs, GitHub repo fetching, and README generation with a modern responsive dark UI.',
+    description: 'A full-stack SaaS platform that generates documentation from GitHub repositories or pasted code. Features secure JWT authentication, project dashboards, editable generated docs, GitHub repo fetching, and README generation with a modern responsive dark UI.',
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Render'],
     demo: 'https://docgen-frontend-tvbl.onrender.com/',
     github: 'https://github.com/omvazire/DocGen'
@@ -23,7 +23,11 @@ const projectsData = [
   {
     title: 'Bidirectional Sign Communication System',
     icon: <Languages size={22} />,
-    description: 'A 3rd-year academic project — an AI-powered communication platform bridging sign-language and non-sign users via real-time gesture recognition and 3D sign animation. I contributed the text-to-sign visualization module and handled full deployment. Built with MediaPipe, PyTorch, React, Flask, and Three.js.',
+    description: 'A communication platform bridging sign-language and non-sign users via real-time gesture recognition and 3D sign animation. Includes sign-to-text translation, speech output, and text-to-sign visualization. Built with MediaPipe, PyTorch, React, Flask, and Three.js.',
+    contribution: {
+      label: 'Academic Project (3rd Year Engineering)',
+      detail: 'My Contributions: Developed the Text-to-Sign module (translation logic & 3D animation) and handled the deployment of the full system.'
+    },
     tech: ['React', 'Flask', 'PyTorch', 'MediaPipe', 'Three.js', 'Docker'],
     demo: 'https://bidirectional-sign-communication-system.onrender.com/',
     github: 'https://github.com/omvazire/bidirectional-sign-communication-system'
@@ -88,11 +92,21 @@ const Projects = () => {
             whileHover={{ scale: 1.02 }}
           >
             <div className="project-content">
-              <h3 className="project-title" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <h3 className="project-title" style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
                 <span style={{ display: 'flex', alignItems: 'center', color: 'var(--accent-color)' }}>{project.icon}</span> 
                 {project.title}
               </h3>
               <p className="project-desc">{project.description}</p>
+
+              {project.contribution && (
+                <div className="project-contribution">
+                  <GraduationCap size={18} />
+                  <div>
+                    <strong>{project.contribution.label}</strong>
+                    <p>{project.contribution.detail}</p>
+                  </div>
+                </div>
+              )}
               
               <div className="project-tech">
                 {project.tech.map((tech, i) => (
