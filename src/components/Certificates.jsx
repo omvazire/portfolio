@@ -5,6 +5,14 @@ import './Certificates.css';
 
 const certificatesData = [
   {
+    title: 'AI Fluency: Framework & Foundations',
+    issuer: 'Anthropic Education',
+    date: '2026',
+    icon: <Award size={18} />,
+    description: 'Certification in AI frameworks, capabilities, and key foundations by Anthropic Education.',
+    pdfLink: '/certificates/certificate-xd8whr8jevkb-1779879298.pdf'
+  },
+  {
     title: 'Retrieval-Augmented Generation (RAG) Lab',
     issuer: 'IBM',
     date: '2025',
