@@ -5,14 +5,6 @@ import './Certificates.css';
 
 const certificatesData = [
   {
-    title: 'Building with the Claude API',
-    issuer: 'Anthropic',
-    date: '2026',
-    icon: <Award size={18} />,
-    description: 'Certification in Claude API fundamentals, prompt engineering, and AI application development by Anthropic.',
-    pdfLink: '/certificates/certificate-zz3soyo7vy3v-1780220196'
-  },
-  {
     title: 'AI Fluency: Framework & Foundations',
     issuer: 'Anthropic',
     date: '2026',
