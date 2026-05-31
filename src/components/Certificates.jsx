@@ -13,6 +13,14 @@ const certificatesData = [
     pdfLink: '/certificates/certificate-xd8whr8jevkb-1779879298.pdf'
   },
   {
+    title: 'Claude with the Anthropic API',
+    issuer: 'Anthropic',
+    date: '2026',
+    icon: <Award size={18} />,
+    description: 'Certification in Claude API fundamentals, prompt engineering, and AI application development by Anthropic.',
+    pdfLink: '/certificates/certificate-zz3soyo7vy3v-1780220196.pdf'
+  },
+  {
     title: 'Retrieval-Augmented Generation (RAG) Lab',
     issuer: 'IBM',
     date: '2025',
@@ -120,8 +128,8 @@ const Certificates = () => {
             whileHover={{ scale: 1.02 }}
           >
             <div className="certificate-content">
-              <h3 className="certificate-title" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <span style={{ display: 'flex', alignItems: 'center', color: 'var(--accent-color)' }}>{cert.icon}</span>
+              <h3 className="certificate-title">
+                <span className="cert-icon">{cert.icon}</span>
                 {cert.title}
               </h3>
               <div className="certificate-meta">

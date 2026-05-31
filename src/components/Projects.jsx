@@ -92,8 +92,8 @@ const Projects = () => {
             whileHover={{ scale: 1.02 }}
           >
             <div className="project-content">
-              <h3 className="project-title" style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
-                <span style={{ display: 'flex', alignItems: 'center', color: 'var(--accent-color)' }}>{project.icon}</span> 
+              <h3 className="project-title">
+                <span className="project-icon">{project.icon}</span>
                 {project.title}
               </h3>
               <p className="project-desc">{project.description}</p>
