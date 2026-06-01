@@ -88,17 +88,6 @@ npm run dev
 
 <hr/>
 
-<h2>📈 Future Improvements</h2>
-
-<ul>
-  <li>Add backend for contact form (Node.js)</li>
-  <li>Add project filtering & search</li>
-  <li>Integrate advanced animations (Framer Motion / GSAP)</li>
-  <li>Add blog or achievements section</li>
-  <li>Improve SEO & accessibility</li>
-</ul>
-
-<hr/>
 
 <h2>👨‍💻 Author</h2>
 
