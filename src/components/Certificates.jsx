@@ -5,14 +5,6 @@ import './Certificates.css';
 
 const certificatesData = [
   {
-    title: 'AI Fluency: Framework & Foundations',
-    issuer: 'Anthropic',
-    date: '2026',
-    icon: <Award size={18} />,
-    description: 'Certification in AI frameworks, capabilities, and key foundations by Anthropic.',
-    pdfLink: '/certificates/certificate-xd8whr8jevkb-1779879298.pdf'
-  },
-  {
     title: 'Claude with the Anthropic API',
     issuer: 'Anthropic',
     date: '2026',
@@ -20,6 +12,14 @@ const certificatesData = [
     description: 'Certification in Claude API fundamentals, prompt engineering, and AI application development by Anthropic.',
     pdfLink: '/certificates/certificate-zz3soyo7vy3v-1780220196.pdf'
   },
+  {
+    title: 'AI Fluency: Framework & Foundations',
+    issuer: 'Anthropic',
+    date: '2026',
+    icon: <Award size={18} />,
+    description: 'Certification in AI frameworks, capabilities, and key foundations by Anthropic.',
+    pdfLink: '/certificates/certificate-xd8whr8jevkb-1779879298.pdf'
+  },  
   {
     title: 'Retrieval-Augmented Generation (RAG) Lab',
     issuer: 'IBM',

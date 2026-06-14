@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 // Generic icons since we have 26 mixed tools and languages
-import { Code2, Database, LayoutTemplate, Server, Terminal, Box, Cloud, Settings, Layers, Workflow, TestTube, BrainCircuit, Activity } from 'lucide-react';
+import { Code2, Database, LayoutTemplate, Server, Box, Cloud, Layers, Activity } from 'lucide-react';
 import './Skills.css';
 
 const skillsData = [
@@ -9,9 +9,7 @@ const skillsData = [
   { name: 'CSS3', icon: <LayoutTemplate />, color: '#1572b6' },
   { name: 'JavaScript', icon: <Code2 />, color: '#f7df1e' },
   { name: 'HTML5', icon: <LayoutTemplate />, color: '#e34f26' },
-  { name: 'PowerShell', icon: <Terminal />, color: '#5391FE' },
   { name: 'Python', icon: <Code2 />, color: '#3776AB' },
-  { name: 'TypeScript', icon: <Code2 />, color: '#3178C6' },
   { name: 'Render', icon: <Cloud />, color: '#46E3B7' },
   { name: 'Vercel', icon: <Server />, color: '#ffffff' },
   { name: 'Bootstrap', icon: <LayoutTemplate />, color: '#7952B3' },
@@ -23,14 +21,7 @@ const skillsData = [
   { name: 'TailwindCSS', icon: <LayoutTemplate />, color: '#38B2AC' },
   { name: 'MongoDB', icon: <Database />, color: '#47A248' },
   { name: 'MySQL', icon: <Database />, color: '#4479A1' },
-  { name: 'Matplotlib', icon: <Activity />, color: '#ffffff' },
   { name: 'Numpy', icon: <Layers />, color: '#013243' },
-  { name: 'Pandas', icon: <Layers />, color: '#150458' },
-  { name: 'PyTorch', icon: <BrainCircuit />, color: '#EE4C2C' },
-  { name: 'Scikit-learn', icon: <TestTube />, color: '#F7931E' },
-  { name: 'TensorFlow', icon: <BrainCircuit />, color: '#FF6F00' },
-  { name: 'Docker', icon: <Box />, color: '#2496ED' },
-  { name: 'Kubernetes', icon: <Workflow />, color: '#326CE5' },
 ];
 
 const containerVariants = {
