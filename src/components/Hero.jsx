@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { Download } from 'lucide-react';
 import './Hero.css';
 
+//beast is back 1-9-26
+
 const typingWords = [
   "developing robust MERN applications",
   "engineering scalable backend systems",

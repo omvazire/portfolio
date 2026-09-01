@@ -11,7 +11,7 @@ const Stats = () => {
   const [githubData, setGithubData] = useState({
     repos: "42+",
     commits: "155+",
-    tech: "25+", // Based on the user's skill image
+    tech: "17+", // Based on the user's skill image
     scratches: "∞"
   });
 
