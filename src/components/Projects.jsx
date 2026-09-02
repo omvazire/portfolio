@@ -1,9 +1,30 @@
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Home, CloudSun, Music, FileText, Languages, GraduationCap } from 'lucide-react';
+import { ExternalLink, Github, Home, CloudSun, Music, FileText, Languages, GraduationCap, Globe, Bot, Briefcase } from 'lucide-react';
 import './Projects.css';
 
 const projectsData = [
+  {
+    title: 'Trivaltor Group',
+    icon: <Globe size={22} />,
+    description: 'A production-ready MERN stack web application built for a real export business. Features a product catalogue with categories, lead collection forms, WhatsApp integration, and a secure JWT-authenticated admin dashboard with real-time visitor and conversion analytics.',
+    contribution: {
+      icon: <Briefcase size={18} />,
+      label: 'Freelance Full-Stack Developer (Real Client Project)',
+      detail: 'Managed end-to-end development directly for a client: requirements, UI/UX, backend security, MongoDB lead tracking, Render cloud hosting, DNS setup on Hostinger, and UptimeRobot monitoring.'
+    },
+    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Cloudinary', 'Recharts', 'Render'],
+    demo: 'https://www.trivaltorgoc.com/',
+    github: 'https://github.com/omvazire/Trivaltor'
+  },
+  {
+    title: 'F1GPT',
+    icon: <Bot size={22} />,
+    description: 'An AI-powered motorsport chatbot assistant built for Formula 1 & racing enthusiasts. Uses Google Gemini API for intelligent responses on regulations, drivers, and technical specs, paired with MongoDB to maintain persistent user conversation history.',
+    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Google Gemini API', 'Render'],
+    demo: 'https://f1gpt-1.onrender.com/',
+    github: 'https://github.com/omvazire/F1GPT'
+  },
   {
     title: 'UrbenNest',
     icon: <Home size={22} />,
@@ -25,6 +46,7 @@ const projectsData = [
     icon: <Languages size={22} />,
     description: 'A communication platform bridging sign-language and non-sign users via real-time gesture recognition and 3D sign animation. Includes sign-to-text translation, speech output, and text-to-sign visualization. Built with MediaPipe, PyTorch, React, Flask, and Three.js.',
     contribution: {
+      icon: <GraduationCap size={18} />,
       label: 'Academic Project (3rd Year Engineering)',
       detail: 'My Contributions: Developed the Text-to-Sign module (translation logic & 3D animation) and handled the deployment of the full system.'
     },
@@ -100,7 +122,7 @@ const Projects = () => {
 
               {project.contribution && (
                 <div className="project-contribution">
-                  <GraduationCap size={18} />
+                  {project.contribution.icon || <GraduationCap size={18} />}
                   <div>
                     <strong>{project.contribution.label}</strong>
                     <p>{project.contribution.detail}</p>
