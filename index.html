@@ -15,6 +15,18 @@
 
 
 
+  <script>
+    (function() {
+      try {
+        var mode = localStorage.getItem('portfolio_theme_mode');
+        if (mode === 'rap') {
+          document.documentElement.setAttribute('data-theme', 'rap');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'default');
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 
 <body>

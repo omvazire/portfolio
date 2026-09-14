@@ -4,7 +4,7 @@
   left: 50%;
   transform: translateX(-50%) !important; /* using framer motion to animate y, but need to maintain x center */
   width: 90%;
-  max-width: 800px;
+  max-width: 840px;
   height: 64px;
   border-radius: 32px;
   background: rgba(30, 30, 40, 0.45);
@@ -17,6 +17,7 @@
   justify-content: space-between;
   padding: 0 24px;
   z-index: 100;
+  transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .nav-logo {
@@ -24,10 +25,13 @@
   font-weight: 800;
   letter-spacing: -0.05em;
   color: var(--text-primary);
+  transition: color 0.3s ease;
+  white-space: nowrap;
 }
 
 .nav-logo span {
   color: var(--accent-color);
+  transition: color 0.3s ease;
 }
 
 .nav-links {
@@ -63,6 +67,12 @@
   width: 100%;
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .nav-contact-btn {
   background: var(--accent-color);
   color: white;
@@ -72,6 +82,7 @@
   font-weight: 600;
   font-size: 0.9rem;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .nav-contact-btn:hover {
@@ -79,14 +90,79 @@
   box-shadow: 0 4px 12px rgba(168, 85, 247, 0.4);
 }
 
-@media (max-width: 640px) {
+/* Rap Mode / Alter Ego Navbar Styling */
+[data-theme="rap"] .glassy-navbar {
+  background: rgba(8, 8, 10, 0.85);
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(255, 255, 255, 0.03);
+}
+
+[data-theme="rap"] .nav-logo {
+  letter-spacing: -0.06em;
+  text-transform: uppercase;
+}
+
+[data-theme="rap"] .nav-logo span {
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+}
+
+[data-theme="rap"] .nav-link {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+[data-theme="rap"] .nav-link:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="rap"] .nav-link::after {
+  background-color: #ffffff;
+}
+
+[data-theme="rap"] .nav-contact-btn {
+  background: #ffffff;
+  color: #050505;
+  border: 1px solid #ffffff;
+}
+
+[data-theme="rap"] .nav-contact-btn:hover {
+  background: #000000;
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 880px) {
+  .glassy-navbar {
+    width: calc(100% - 110px);
+    left: 14px;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 768px) {
   .nav-links {
-    display: none; /* Hide on very small screens for now */
+    display: none;
   }
 }
 
 @media (max-width: 480px) {
   .glassy-navbar {
-    display: none !important;
+    top: 14px;
+    width: calc(100% - 98px);
+    height: 52px;
+    padding: 0 12px;
+    border-radius: 26px;
+    left: 10px;
+  }
+  
+  .nav-logo {
+    font-size: 0.98rem;
+  }
+  
+  .nav-contact-btn {
+    padding: 5px 10px;
+    font-size: 0.75rem;
   }
 }

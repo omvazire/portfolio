@@ -15,8 +15,20 @@
 
 
 
-  <script type="module" crossorigin src="/assets/index-b199c336.js"></script>
-  <link rel="stylesheet" href="/assets/index-ab617454.css">
+  <script>
+    (function() {
+      try {
+        var mode = localStorage.getItem('portfolio_theme_mode');
+        if (mode === 'rap') {
+          document.documentElement.setAttribute('data-theme', 'rap');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'default');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <script type="module" crossorigin src="/assets/index-8380a4ea.js"></script>
+  <link rel="stylesheet" href="/assets/index-c1c2b093.css">
 </head>
 
 <body>
@@ -30,4 +42,3 @@
 
 
 
-<h1>I believe in me</h1>

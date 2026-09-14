@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Download } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 import './Hero.css';
 
 //beast is back 1-9-26
@@ -15,6 +16,7 @@ const typingWords = [
 ];
 
 const Hero = () => {
+  const { isRapMode } = useTheme();
   const [text, setText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
@@ -95,9 +97,20 @@ const Hero = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="profile-img-wrapper">
+            <div className={`profile-img-wrapper ${isRapMode ? 'profile-rap-wrapper' : ''}`}>
               <div className="profile-img placeholder-avatar">
-                <img src={`/avatar.jpeg`} alt="Profile" className="avatar-img" />
+                <AnimatePresence mode="wait" initial={false}>
+                  <motion.img
+                    key={isRapMode ? 'avatar-rap' : 'avatar-default'}
+                    src={isRapMode ? '/avatar-rap.png' : '/avatar.jpeg'}
+                    alt={isRapMode ? 'Alter Ego Om Vazire' : 'Profile'}
+                    className={`avatar-img ${isRapMode ? 'avatar-img-rap' : ''}`}
+                    initial={{ opacity: 0, scale: 0.96, filter: 'blur(3px)' }}
+                    animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+                    exit={{ opacity: 0, scale: 1.03, filter: 'blur(3px)' }}
+                    transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}
+                  />
+                </AnimatePresence>
               </div>
             </div>
           </motion.div>

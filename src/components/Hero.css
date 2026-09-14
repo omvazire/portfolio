@@ -288,3 +288,74 @@
     gap: 2rem;
   }
 }
+
+/* ====================================================
+   ALTER EGO / RAP MODE HERO STYLING
+   ==================================================== */
+[data-theme="rap"] .hero-title {
+  letter-spacing: -0.04em;
+  color: #ffffff;
+}
+
+[data-theme="rap"] .subtitle {
+  color: #a1a1aa;
+}
+
+[data-theme="rap"] .typewriter-container {
+  color: #ffffff;
+  border-left: 2px solid rgba(255, 255, 255, 0.3);
+  padding-left: 12px;
+}
+
+[data-theme="rap"] .typewriter-prefix {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="rap"] .typewriter-cursor {
+  color: #ff2a2a; /* subtle red accent */
+  text-shadow: 0 0 8px rgba(255, 42, 42, 0.8);
+}
+
+[data-theme="rap"] .primary-btn {
+  background: #ffffff;
+  color: #050505;
+  font-weight: 700;
+  border: 1px solid #ffffff;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.25);
+  letter-spacing: 0.02em;
+}
+
+[data-theme="rap"] .primary-btn:hover {
+  background: #000000;
+  color: #ffffff;
+  box-shadow: 0 6px 25px rgba(255, 255, 255, 0.45);
+  transform: translateY(-2px);
+}
+
+[data-theme="rap"] .secondary-btn {
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+[data-theme="rap"] .secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #ffffff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+[data-theme="rap"] .profile-img-wrapper {
+  background: linear-gradient(135deg, #ffffff 0%, #71717a 35%, #ffffff 65%, #27272a 100%);
+  box-shadow: 0 10px 50px rgba(255, 255, 255, 0.2), 0 0 80px rgba(0, 0, 0, 0.9);
+}
+
+[data-theme="rap"] .profile-img {
+  background: #050505;
+}
+
+[data-theme="rap"] .avatar-img {
+  filter: contrast(110%) brightness(103%);
+}
+
