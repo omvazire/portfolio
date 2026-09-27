@@ -133,7 +133,8 @@
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
 }
 
-@media (max-width: 880px) {
+/* Tablet adjustment when ego button is present */
+@media (max-width: 880px) and (min-width: 769px) {
   .glassy-navbar {
     width: calc(100% - 110px);
     left: 14px;
@@ -141,7 +142,14 @@
   }
 }
 
+/* Mobile Phone Layout (Ego button is hidden) */
 @media (max-width: 768px) {
+  .glassy-navbar {
+    width: calc(100% - 32px);
+    left: 50%;
+    transform: translateX(-50%) !important;
+    padding: 0 20px;
+  }
   .nav-links {
     display: none;
   }
@@ -150,11 +158,12 @@
 @media (max-width: 480px) {
   .glassy-navbar {
     top: 14px;
-    width: calc(100% - 98px);
+    width: calc(100% - 24px);
     height: 52px;
-    padding: 0 12px;
+    padding: 0 16px;
     border-radius: 26px;
-    left: 10px;
+    left: 50%;
+    transform: translateX(-50%) !important;
   }
   
   .nav-logo {
@@ -162,7 +171,7 @@
   }
   
   .nav-contact-btn {
-    padding: 5px 10px;
-    font-size: 0.75rem;
+    padding: 6px 14px;
+    font-size: 0.8rem;
   }
 }

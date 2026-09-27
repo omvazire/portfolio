@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 import './AlterEgoToggle.css';
 
@@ -11,13 +11,18 @@ const AlterEgoToggle = () => {
       <motion.button
         onClick={toggleTheme}
         className={`ego-btn ${isRapMode ? 'mode-rap' : 'mode-default'} interactive`}
-        whileTap={{ scale: 0.94 }}
-        whileHover={{ scale: 1.05 }}
+        whileHover={{ scale: 1.04, y: -2 }}
+        whileTap={{ scale: 0.95, y: 0 }}
+        transition={{ type: 'spring', stiffness: 400, damping: 25 }}
         aria-label={isRapMode ? "Exit Alter Ego Mode" : "Switch to Alter Ego Mode"}
         title={isRapMode ? "Exit Alter Ego (Return to Default Portfolio)" : "Switch to Alter Ego"}
       >
         {/* Logo Badge on Top */}
-        <div className="ego-logo-badge">
+        <motion.div 
+          className="ego-logo-badge"
+          animate={{ rotate: isRapMode ? 180 : 0 }}
+          transition={{ type: 'spring', stiffness: 280, damping: 20 }}
+        >
           <svg
             className="ego-logo-svg"
             viewBox="0 0 24 24"
@@ -42,12 +47,21 @@ const AlterEgoToggle = () => {
               </linearGradient>
             </defs>
           </svg>
-        </div>
+        </motion.div>
 
-        {/* Text Below Logo in Bold Small Style */}
-        <span className="ego-btn-text">
-          {isRapMode ? 'EXIT EGO' : 'SWITCH TO EGO'}
-        </span>
+        {/* Text Below Logo with silky smooth crossfade */}
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.span
+            key={isRapMode ? 'exit' : 'switch'}
+            className="ego-btn-text"
+            initial={{ opacity: 0, y: 3 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -3 }}
+            transition={{ duration: 0.18, ease: 'easeOut' }}
+          >
+            {isRapMode ? 'EXIT EGO' : 'SWITCH TO EGO'}
+          </motion.span>
+        </AnimatePresence>
       </motion.button>
     </div>
   );

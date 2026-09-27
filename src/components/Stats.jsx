@@ -103,18 +103,13 @@ const Stats = () => {
             className="heatmap-container" 
             ref={scrollRef}
             onWheel={(e) => {
-              // Allows smooth horizontal scrolling with regular mouse wheel
-              if (scrollRef.current && e.deltaY !== 0) {
-                e.preventDefault();
-                scrollRef.current.scrollLeft -= e.deltaY; // -= because of rtl direction
-                
-                // Temporarily disable pointer events to force tooltips/hover states to dismiss 
-                // and realign correctly once the scrolling stops.
-                scrollRef.current.style.pointerEvents = 'none';
-                clearTimeout(scrollRef.current.scrollTimeout);
-                scrollRef.current.scrollTimeout = setTimeout(() => {
-                  if (scrollRef.current) scrollRef.current.style.pointerEvents = 'auto';
-                }, 150);
+              // Only intercept if user is deliberately holding Shift or scrolling horizontally
+              if (scrollRef.current && (e.shiftKey || Math.abs(e.deltaX) > Math.abs(e.deltaY))) {
+                const delta = e.shiftKey ? e.deltaY : e.deltaX;
+                if (delta !== 0) {
+                  e.preventDefault();
+                  scrollRef.current.scrollLeft -= delta;
+                }
               }
             }}
           >

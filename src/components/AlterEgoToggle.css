@@ -34,20 +34,17 @@
   text-decoration: none;
   font-family: 'Inter', sans-serif;
   user-select: none;
-  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: background 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .ego-btn:hover {
-  transform: translateY(-2px);
   border-color: rgba(255, 255, 255, 0.35);
   box-shadow: 
     0 12px 36px rgba(0, 0, 0, 0.6),
     0 0 25px rgba(168, 85, 247, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
-}
-
-.ego-btn:active {
-  transform: scale(0.96);
 }
 
 /* Logo Badge */
@@ -61,7 +58,7 @@
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.14);
   position: relative;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 
 .ego-btn:hover .ego-logo-badge {
@@ -72,7 +69,7 @@
 .ego-logo-svg {
   width: 20px;
   height: 20px;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 /* Text Label below logo */
@@ -85,6 +82,7 @@
   white-space: nowrap;
   line-height: 1.1;
   transition: color 0.3s ease;
+  display: inline-block;
 }
 
 /* Rap Mode / Alter Ego Active State */
@@ -122,8 +120,8 @@
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
 
-/* Responsive Positioning */
-@media (max-width: 880px) {
+/* Tablet / Smaller Laptop adjustments */
+@media (max-width: 880px) and (min-width: 769px) {
   .alter-ego-standalone-wrap {
     top: 14px;
     right: 14px;
@@ -144,5 +142,12 @@
   }
   .ego-btn-text {
     font-size: 0.58rem;
+  }
+}
+
+/* Visible ONLY on Laptop & Desktop: Strictly HIDDEN on Mobile phone layout */
+@media (max-width: 768px) {
+  .alter-ego-standalone-wrap {
+    display: none !important;
   }
 }

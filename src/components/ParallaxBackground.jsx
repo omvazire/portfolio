@@ -41,9 +41,11 @@ const ParallaxBackground = () => {
           height: '50vw',
           maxHeight: '600px',
           maxWidth: '600px',
-          background: 'radial-gradient(circle, var(--particle-color) 0%, transparent 60%)',
+          background: 'radial-gradient(circle, var(--particle-color) 0%, rgba(168, 85, 247, 0.06) 35%, transparent 70%)',
           borderRadius: '50%',
-          filter: 'blur(60px)',
+          filter: 'blur(40px)',
+          willChange: 'transform',
+          transform: 'translateZ(0)',
         }}
       />
       
@@ -61,9 +63,11 @@ const ParallaxBackground = () => {
           height: '40vw',
           maxHeight: '500px',
           maxWidth: '500px',
-          background: 'radial-gradient(circle, var(--particle-color) 0%, transparent 60%)',
+          background: 'radial-gradient(circle, var(--particle-color) 0%, rgba(168, 85, 247, 0.06) 35%, transparent 70%)',
           borderRadius: '50%',
-          filter: 'blur(60px)',
+          filter: 'blur(40px)',
+          willChange: 'transform',
+          transform: 'translateZ(0)',
         }}
       />
 
